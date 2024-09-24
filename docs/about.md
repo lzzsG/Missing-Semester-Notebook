@@ -5,13 +5,7 @@ permalink: /about/
 nav_order: 99
 ---
 
-# 更新历史
 
-<br/><br/>
-
-2024/4/29 first commit
-
----
 
 # markdown and highlight test
 
