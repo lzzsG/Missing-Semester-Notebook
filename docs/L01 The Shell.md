@@ -1,4 +1,13 @@
-# The Shell
+---
+layout: post
+title: Lecture 1 The Shell
+nav_order: 1
+description: "Lecture 1: The Shell"
+permalink: /L01
+
+---
+
+# Lecture 1: The Shell
 
 ## Shell 与命令行工具简介
 
