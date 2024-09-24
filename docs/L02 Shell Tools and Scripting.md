@@ -8,6 +8,117 @@ permalink: /L02
 
 ---
 
+好的，以下是提取的关于 Bash 脚本和 Shell 工具的相关内容，以及相应的解释：
+
+### Shell 脚本基础
+
+1. **变量赋值和访问**
+   - **示例**：
+     ```bash
+     foo=bar
+     echo "$foo"  # 打印 bar
+     echo '$foo'  # 打印 $foo
+     ```
+   - **解释**：`foo=bar` 为变量 `foo` 赋值，而 `$foo` 用于访问该变量的值。使用单引号时，不会进行变量替换。
+
+2. **控制流**
+   - **关键字**：`if`, `case`, `while`, `for`
+   - **示例**：
+     ```bash
+     if [[ condition ]]; then
+         # do something
+     fi
+     ```
+   - **解释**：Bash 支持条件语句和循环，可以根据条件执行不同的操作。
+
+3. **特殊变量**
+   - **示例**：
+     - `$0`：脚本名
+     - `$1` 到 `$9`：脚本参数
+     - `$#`：参数个数
+     - `$?`：前一个命令的返回值
+     - `$$`：当前脚本的进程ID
+   - **解释**：这些变量用于获取执行环境和命令的相关信息。
+
+4. **命令替换**
+   - **示例**：
+     ```bash
+     for file in $(ls); do
+         echo "$file"
+     done
+     ```
+   - **解释**：使用 `$(CMD)` 语法获取命令 `CMD` 的输出，并用于后续操作。
+
+5. **退出状态**
+   - **示例**：
+     ```bash
+     false || echo "Oops, fail"  # 输出 "Oops, fail"
+     true && echo "Success"       # 输出 "Success"
+     ```
+   - **解释**：`&&` 和 `||` 用于根据前一个命令的退出状态执行后续命令。
+
+### Shell 工具
+
+1. **查找文件**
+   - **工具**：`find`
+   - **示例**：
+     ```bash
+     find . -name '*.tmp' -exec rm {} \;
+     ```
+   - **解释**：`find` 命令用于查找文件并执行操作，这里是删除所有 `.tmp` 文件。
+
+2. **查找内容**
+   - **工具**：`grep`
+   - **示例**：
+     ```bash
+     grep 'pattern' filename
+     ```
+   - **解释**：`grep` 用于在文件中搜索匹配的模式，可以使用不同选项如 `-R` 递归搜索。
+
+3. **命令历史**
+   - **工具**：`history`
+   - **示例**：
+     ```bash
+     history | grep find
+     ```
+   - **解释**：查看之前执行过的命令，可以利用管道与 `grep` 结合过滤。
+
+4. **目录导航**
+   - **工具**：`fasd`, `autojump`
+   - **示例**：
+     ```bash
+     z cool_project  # 使用 fasd
+     j cool_project  # 使用 autojump
+     ```
+   - **解释**：这两个工具帮助用户快速导航到频繁访问的目录。
+
+5. **使用手册**
+   - **工具**：`man`
+   - **示例**：
+     ```bash
+     man ls
+     ```
+   - **解释**：使用 `man` 命令查看命令的详细使用手册和选项。
+
+6. **shebang**
+   - **示例**：
+     ```bash
+     #!/usr/bin/env python
+     ```
+   - **解释**：在脚本开头指定解释器，确保脚本在不同环境中的可移植性。
+
+
+
+
+
+
+
+以下内容不建议使用，请阅读[官方讲义](https://missing-semester-cn.github.io/2020/shell-tools/)。
+
+---
+
+
+
 # Lecture 2: Shell Tools and Scripting
 
 ## Shell 脚本与 Bash 控制流
